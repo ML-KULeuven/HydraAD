@@ -1,0 +1,94 @@
+!results
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+htmlcov/
+.mypy_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.env.local
+.env.*.local
+
+# Data files (large or generated)
+# Keep the `data/` folder in the repo but ignore its contents. Use
+# `data/.gitkeep` to keep the empty directory tracked.
+data/*
+!data/.gitkeep
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.hdf5
+*.sqlite3
+
+# Model checkpoints and heavy binaries
+*.pt
+*.pth
+*.ckpt
+*.ckpt.tar
+*.bin
+models/
+weights/
+checkpoints/
+
+# Logs and outputs
+logs/
+outputs/
+*.log
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+/docs/_build/
+/.github/agents/
+/Datasets/
