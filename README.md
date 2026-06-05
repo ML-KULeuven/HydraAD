@@ -1,6 +1,6 @@
 # HydraAD:  Exceptionally fast and accurate time series anomaly detection using competing random kernels
 
-HydraAD is a highly effective and efficient anomaly detection model. It builds upon [Hydra](https://doi.org/10.1007/s10618-023-00939-3) for time series classification by leveraging groups of random convolutional kernels, from which features are generated. This repository  
+HydraAD is a highly effective and efficient anomaly detection model. It builds upon [Hydra](https://doi.org/10.1007/s10618-023-00939-3) for time series classification by leveraging groups of random convolutional kernels, from which features are generated. 
 
 ## Installation
 
