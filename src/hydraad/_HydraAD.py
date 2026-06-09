@@ -20,6 +20,7 @@ class HydraAD(BaseDetector):
     overlap_rate: float
     quantile: float
     scaling: Literal["sparse", "standard", "none"]
+    batch_size: int | None = None,
     # Hydra parameters
     n_kernels: int
     n_groups: int
@@ -42,6 +43,7 @@ class HydraAD(BaseDetector):
         overlap_rate: float = 0.25,
         quantile: float = 0.9,
         scaling: Literal["sparse", "standard", "none"] = "sparse",
+        batch_size: int | None = None,
         n_kernels: int = 4,
         n_groups: int = 32,
         dilations: list[int] | Literal["auto"] = "auto",
@@ -60,6 +62,7 @@ class HydraAD(BaseDetector):
         self.overlap_rate = overlap_rate
         self.quantile = quantile
         self.scaling = scaling
+        self.batch_size = batch_size
 
         self.n_kernels = n_kernels
         self.n_groups = n_groups
@@ -113,7 +116,14 @@ class HydraAD(BaseDetector):
         if X.ndim == 1:
             windows = windows.unsqueeze(1)
         with torch.no_grad():
-            embedding = self.hydra_.transform(windows)
+            if self.batch_size is None or len(X) <= self.batch_size:
+                embedding = self.hydra_.transform(windows)
+            else:
+                Z = []
+                batches = torch.arange(len(windows)).split(self.batch_size)
+                for batch in batches:
+                    Z.append(self.hydra_.transform(windows[batch]))
+                embedding = torch.cat(Z)
 
         # Scaling
         if self.scaling == "sparse":
