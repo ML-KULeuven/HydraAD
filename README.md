@@ -1,5 +1,7 @@
 # HydraAD:  Exceptionally fast and accurate time series anomaly detection using competing random kernels
 
+> HydraAD is now also part of [dtaianomaly](https://github.com/ML-KULeuven/dtaianomaly)!
+
 HydraAD is a highly effective and efficient anomaly detection model. It builds upon [Hydra](https://doi.org/10.1007/s10618-023-00939-3) for time series classification by leveraging groups of random convolutional kernels, from which features are generated. 
 
 ## Installation
@@ -15,7 +17,7 @@ pip install .
 
 ## Usage
 
-HydraAD is build upon [dtaianomaly](https://github.com/ML-KULeuven/dtaianomaly), a Python tool for time series anomaly detection. The input of HydraAD is numpy array of shape ``(n_samples, n_channels)`` or ``(n_samples,)`` for univariate time series:
+The implementation is build upon [dtaianomaly](https://github.com/ML-KULeuven/dtaianomaly), a Python tool for time series anomaly detection. The input of HydraAD is numpy array of shape ``(n_samples, n_channels)`` or ``(n_samples,)`` for univariate time series:
 ```python
 from hydraad import TSBADLoader
 
@@ -43,13 +45,18 @@ The scripts for reproducing our experiments are available in the [scripts](scrip
 
 ## Acknowledgements
 
-IF you find HydraAD useful for your research or applications, please consider citing our paper:
+IF you find HydraAD useful for your research or applications, please consider citing [our paper](https://link.springer.com/chapter/10.1007/978-3-032-37654-1_7):
 ```bibtex
-@inproceedings{carpentier2026hydraad,`
-  title={{HydraAD: Exceptionally fast and accurate time series anomaly detection using competing random kernels}},
-  author={Carpentier, Louis and Devos, Laurens and Weert, Wannes and Verbeke, Mathias},
-  booktitle={Data Mining and Knowledge Discovery},
-  year={2026}
+@InProceedings{carpentier2026hydraad,
+    author="Carpentier, Louis and Devos, Laurens and Meert, Wannes and Verbeke, Mathias",
+    title="HydraAD: Exceptionally Fast and Accurate Time Series Anomaly Detection Using Competing Random Kernels",
+    booktitle="Machine Learning and Knowledge Discovery in Databases. Research Track",
+    year="2026",
+    publisher="Springer Nature Switzerland",
+    address="Cham",
+    pages="110--127",
+    isbn="978-3-032-37654-1",
+    doi="10.1007/978-3-032-37654-1_7",
 }
 ```
 
